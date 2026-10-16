@@ -1,0 +1,5 @@
+export type User = { id: string; name: string; email: string; avatarUrl?: string | null; bio?: string; createdAt?: string };
+export type Conversation = { id: string; type: 'direct'|'group'; title?: string | null; avatar_url?: string | null; created_by?: string; created_at?: string; member_count?: number; last_body?: string; last_at?: string; other_user_id?: string | null; other_name?: string | null; other_avatar?: string | null; unread?: number };
+export type Message = { id: string; conversation_id: string; sender_id: string; body: string; kind: string; attachment_url?: string | null; attachment_name?: string | null; attachment_type?: string | null; attachment_size?: number | null; created_at: string; deleted_at?: string | null; sender_name?: string; sender_avatar?: string | null; reactions?: {emoji:string; userId:string}[] };
+
+export type CallLog = { id: string; conversation_id: string; caller_id: string; callee_id: string; video: boolean; status: 'completed'|'missed'|'declined'|'ringing'; started_at: string; duration: number; peer_id: string; peer_name: string; peer_avatar?: string | null };
